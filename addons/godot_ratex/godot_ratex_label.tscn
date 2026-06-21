@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bwdb3fj4td8k"]
+
+[ext_resource type="Script" uid="uid://dxq7e38qo23xd" path="res://addons/godot_ratex/godot_ratex_label.gd" id="1_5810u"]
+
+[node name="GodotRatexLabel" type="VBoxContainer" unique_id=1495138909]
+theme_override_constants/separation = 4
+script = ExtResource("1_5810u")
