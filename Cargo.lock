@@ -371,7 +371,7 @@ dependencies = [
 
 [[package]]
 name = "godot_ratex"
-version = "1.2.0"
+version = "1.2.1"
 dependencies = [
  "godot",
  "ratex-layout",
