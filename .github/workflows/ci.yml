@@ -228,13 +228,9 @@ jobs:
       - name: Assemble addon directory
         shell: bash
         run: |
-          ADDON_DIR="addons/godot_ratex"
-          mkdir -p dist-addon/godot_ratex
-          cp "$ADDON_DIR/godot_ratex.gdextension" dist-addon/godot_ratex/
-          cp "$ADDON_DIR/godot_ratex.gdextension.uid" dist-addon/godot_ratex/
-          cp "$ADDON_DIR/README.md" dist-addon/godot_ratex/
-          cp "$ADDON_DIR/LICENSE" dist-addon/godot_ratex/
-          cp -r "$ADDON_DIR/demo" dist-addon/godot_ratex/
+          # Copy all files under the addon directory, then overlay build artifacts
+          mkdir -p dist-addon
+          cp -r addons/godot_ratex dist-addon/
 
           declare -A SUBDIRS=(
             ["linux-x86_64"]="linux"
