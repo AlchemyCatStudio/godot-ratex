@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.1] — 2026-06-25
+
+### Changed
+- Updated to Godot 4.7 (godot-rust 0.5.3 → 0.5.4)
+- Updated RaTeX dependency to 0.1.12
+
+### Fixed
+- Cleaned up unused local variable in `build.sh`
+
 ## [1.2.0] — 2026-06-05
 
 ### Added
