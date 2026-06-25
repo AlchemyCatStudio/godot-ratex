@@ -131,7 +131,6 @@ if [ "$BUILD_ALL" = true ]; then
     )
 
     for t in "${TARGETS_TO_BUILD[@]}"; do
-        local rust_target
         rust_target="$(parse_platform_data "$t" | cut -d'|' -f1)"
 
         case "$(uname -s)" in

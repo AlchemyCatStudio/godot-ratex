@@ -13,7 +13,7 @@ codegen-units = 1   # Reduce parallel processing units so LTO works optimally
 strip = "symbols"   # Remove all debug symbols & unused functions automatically
 
 [dependencies]
-godot = "0.5.3"
+godot = "0.5.4"
 ratex-parser = { git = "https://github.com/erweixin/RaTeX.git" }
 ratex-types = { git = "https://github.com/erweixin/RaTeX.git" }
 ratex-layout = { git = "https://github.com/erweixin/RaTeX.git" }

@@ -41,9 +41,9 @@ checksum = "76a2e8124351fda1ef8aaaa3bbd7ebbcb486bbcd4225aca0aa0d84bb2db8fecb"
 
 [[package]]
 name = "arrayvec"
-version = "0.7.6"
+version = "0.7.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c02d123df017efcdfbd739ef81735b36c5ba83ec3c59c80a9d7ecc718f92e50"
+checksum = "f02882884d3e1bc524fb12c79f107f6ad0e1cfd498c536ffb494301740995dfe"
 
 [[package]]
 name = "autocfg"
@@ -80,9 +80,9 @@ checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
 name = "bitflags"
-version = "2.12.1"
+version = "2.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "84d7ced0ae9557296835c32bf1b1e02b44c746701f898460fb000d7eaa84f00a"
+checksum = "b4388bee8683e3d04af747c73422af53102d2bd24d9eadb6cbc100baef4b43f8"
 
 [[package]]
 name = "block-buffer"
@@ -92,6 +92,12 @@ checksum = "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71"
 dependencies = [
  "generic-array",
 ]
+
+[[package]]
+name = "bumpalo"
+version = "3.20.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72f5acc6cb2ba439de613abc23857ec3d78374d8ed5ac84e9d11336e87da8649"
 
 [[package]]
 name = "bytemuck"
@@ -244,10 +250,34 @@ dependencies = [
 ]
 
 [[package]]
-name = "gdextension-api"
-version = "0.5.0"
+name = "futures-core"
+version = "0.3.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "58ad9a3d877c77834a2d1d92842ebd56928f61bd52e0fac4f04fc8b3731b0437"
+checksum = "7e3450815272ef58cec6d564423f6e755e25379b217b0bc688e295ba24df6b1d"
+
+[[package]]
+name = "futures-task"
+version = "0.3.32"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "037711b3d59c33004d3856fbdc83b99d4ff37a24768fa1be9ce3538a1cde4393"
+
+[[package]]
+name = "futures-util"
+version = "0.3.32"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "389ca41296e6190b48053de0321d02a77f32f8a5d2461dd38762c0593805c6d6"
+dependencies = [
+ "futures-core",
+ "futures-task",
+ "pin-project-lite",
+ "slab",
+]
+
+[[package]]
+name = "gdextension-api"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3489a9e7463353467db3cfe3eb12de31c9b6200e4f928bde4959bf5db5b31d2f"
 
 [[package]]
 name = "generic-array"
@@ -267,9 +297,9 @@ checksum = "f70749695b063ecbf6b62949ccccde2e733ec3ecbbd71d467dca4e5c6c97cca0"
 
 [[package]]
 name = "godot"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "71af3920bb1d3e14eb2e71644b140d26035fe3edc6b662db4575c439778b7ee7"
+checksum = "4452effbae3a093b187f82149b6b0025667cde9993b22769a012d5bac9e8f39f"
 dependencies = [
  "godot-core",
  "godot-macros",
@@ -277,24 +307,24 @@ dependencies = [
 
 [[package]]
 name = "godot-bindings"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d9347553a03444bbdc1e802f35ea58b7b52c01ece19b081d327c87991db5fd46"
+checksum = "773860a42753be6f8bdc40fe8e0ee169164a83605ab7d6dc0c9b746892cd85ed"
 dependencies = [
  "gdextension-api",
 ]
 
 [[package]]
 name = "godot-cell"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bdee833f1fe0bc3208062ede0626f552559dfdcc824ff5e6208aa922a0f509d1"
+checksum = "f18d30809e2d52da0402ad4c6f1d77b9d35832481c9527bc24a63412bc05252d"
 
 [[package]]
 name = "godot-codegen"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4fac542f1dd9bdaeb7d537fa5ba499fb6d89b29e484061959930c45b509818af"
+checksum = "85875076fc06a8ad5a452e494274f233da060764208caf2beac2cde4c9df15b5"
 dependencies = [
  "godot-bindings",
  "heck",
@@ -305,9 +335,9 @@ dependencies = [
 
 [[package]]
 name = "godot-core"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d92e2c8b7f1fe46b59c8ecec5ed1156e7ad973e30c9133444b009462f8b09e06"
+checksum = "57d22572dbf40e5cf4bf36c05da54f9d46dd1ff0944b6e6c7ee412c16386fe88"
 dependencies = [
  "glam",
  "godot-bindings",
@@ -318,9 +348,9 @@ dependencies = [
 
 [[package]]
 name = "godot-ffi"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0b34c2008795f645977bec2ebbc30a73b4f53ca2de54a0a93ff2cc2dffd10c9"
+checksum = "854633981e4f54c84d240d76ac71a816c738890774291f7d430a0adb29db9bd2"
 dependencies = [
  "godot-bindings",
  "godot-codegen",
@@ -329,9 +359,9 @@ dependencies = [
 
 [[package]]
 name = "godot-macros"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1799cc35d0db5760a74f8f97de7d620e74542b76d5d41f38ea301fa2cb69882f"
+checksum = "37dc9ce1b970e798df827dcccfe68d5985804f93b5fbab156e507999272965f0"
 dependencies = [
  "godot-bindings",
  "proc-macro2",
@@ -381,6 +411,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
 
 [[package]]
+name = "js-sys"
+version = "0.3.103"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "53b44bfcdb3f8d5837a46dae1ca9660a837176eee74a28b229bc626816589102"
+dependencies = [
+ "cfg-if",
+ "futures-util",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "kurbo"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -406,21 +447,21 @@ checksum = "b6d2cec3eae94f9f509c767b45932f1ada8350c4bdb85af2fcab4a3c14807981"
 
 [[package]]
 name = "log"
-version = "0.4.29"
+version = "0.4.33"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5e5032e24019045c762d3c0f28f5b6b8bbf38563a65908389bf7978758920897"
+checksum = "0ceec5bc11778974d1bcb055b18002eba7f4b3518b6a0081b3af5f21666da9ad"
 
 [[package]]
 name = "memchr"
-version = "2.8.0"
+version = "2.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79"
+checksum = "88904434abc2901f197fe8cc55f0445e7ded921dba5911dad2e2b39b48e663c4"
 
 [[package]]
 name = "memmap2"
-version = "0.9.10"
+version = "0.9.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "714098028fe011992e1c3962653c96b2d578c4b4bce9036e15ff220319b1e0e3"
+checksum = "d1219ed1b7f229ee7104d281dd01d6802fe28bb6e95d292942c4daacdeb798c0"
 dependencies = [
  "libc",
 ]
@@ -469,6 +510,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "once_cell"
+version = "1.21.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
+
+[[package]]
 name = "owned_ttf_parser"
 version = "0.25.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -483,7 +530,7 @@ version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "92a79477295a713c2ed425aa82a8b5d20cec3fdee203706cbe6f3854880c1c81"
 dependencies = [
- "bitflags 2.12.1",
+ "bitflags 2.13.0",
  "itoa",
  "memchr",
  "ryu",
@@ -532,6 +579,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "pin-project-lite"
+version = "0.2.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a89322df9ebe1c1578d689c92318e070967d1042b512afbe49518723f4e6d5cd"
+
+[[package]]
 name = "png"
 version = "0.17.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -564,9 +617,9 @@ dependencies = [
 
 [[package]]
 name = "quote"
-version = "1.0.45"
+version = "1.0.46"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "41f2619966050689382d2b44f664f4bc593e129785a36d6ee376ddf37259b924"
+checksum = "dfbc457d0c7a0759a614551b11a6409e5951f6c7537be1f1b7682b9ae9230368"
 dependencies = [
  "proc-macro2",
 ]
@@ -588,8 +641,8 @@ checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
 
 [[package]]
 name = "ratex-font"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "phf",
  "ratex-types",
@@ -597,8 +650,8 @@ dependencies = [
 
 [[package]]
 name = "ratex-font-loader"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "ab_glyph",
  "ratex-font",
@@ -609,16 +662,16 @@ dependencies = [
 
 [[package]]
 name = "ratex-katex-fonts"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "rust-embed",
 ]
 
 [[package]]
 name = "ratex-layout"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "ratex-font",
  "ratex-parser",
@@ -628,8 +681,8 @@ dependencies = [
 
 [[package]]
 name = "ratex-lexer"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "ratex-types",
  "serde",
@@ -638,8 +691,8 @@ dependencies = [
 
 [[package]]
 name = "ratex-parser"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "fancy-regex",
  "ratex-font",
@@ -655,8 +708,8 @@ dependencies = [
 
 [[package]]
 name = "ratex-pdf"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "ab_glyph",
  "miniz_oxide 0.9.1",
@@ -673,8 +726,8 @@ dependencies = [
 
 [[package]]
 name = "ratex-render"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "ab_glyph",
  "png",
@@ -692,8 +745,8 @@ dependencies = [
 
 [[package]]
 name = "ratex-svg"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "ab_glyph",
  "base64",
@@ -706,16 +759,16 @@ dependencies = [
 
 [[package]]
 name = "ratex-types"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "ratex-unicode-font"
-version = "0.1.11"
-source = "git+https://github.com/erweixin/RaTeX.git#7a5f242b3f7ae45ae891730f88b0a51559f20ce4"
+version = "0.1.12"
+source = "git+https://github.com/erweixin/RaTeX.git#00315b83897aa44611bb7597fc80cbc54daf9a37"
 dependencies = [
  "fontdb",
  "system-fonts",
@@ -734,9 +787,9 @@ dependencies = [
 
 [[package]]
 name = "regex"
-version = "1.12.3"
+version = "1.12.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e10754a14b9137dd7b1e3e5b0493cc9171fdd105e0ab477f51b72e7f3ac0e276"
+checksum = "f1292b7759ae1cb9ec195452d1390a074f0cd8541ab7a5a8c31cd6db45d4a6ba"
 dependencies = [
  "aho-corasick",
  "memchr",
@@ -763,9 +816,9 @@ checksum = "cab834c73d247e67f4fae452806d17d3c7501756d98c8808d7c9c7aa7d18f973"
 
 [[package]]
 name = "regex-syntax"
-version = "0.8.10"
+version = "0.8.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc897dd8d9e8bd1ed8cdad82b5966c3e0ecae09fb1907d58efaa013543185d0a"
+checksum = "d6f6ff9a378485b298a5286656da665ba74413d36db0979633275d2e708145d4"
 
 [[package]]
 name = "roxmltree"
@@ -814,6 +867,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "94300abf3f1ae2e2b8ffb7b58043de3d399c73fa6f4b73826402a5c457614dbe"
 
 [[package]]
+name = "rustversion"
+version = "1.0.22"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9619753635a9c0d2538d46d"
+
+[[package]]
 name = "ryu"
 version = "1.0.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -860,9 +919,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.149"
+version = "1.0.150"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "83fc039473c5595ace860d8c4fafa220ff474b3fc6bfdb4293327f1a37e94d86"
+checksum = "e8014e44b4736ed0538adeecded0fce2a272f22dc9578a7eb6b2d9993c74cfb9"
 dependencies = [
  "itoa",
  "memchr",
@@ -905,6 +964,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "slab"
+version = "0.4.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5"
+
+[[package]]
 name = "slotmap"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -915,9 +980,9 @@ dependencies = [
 
 [[package]]
 name = "smallvec"
-version = "1.15.1"
+version = "1.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67b1b7a3b5fe4f1376887184045fcf45c69e92af734b7aaddc05fb777b6fbd03"
+checksum = "8ed6a63f02c8539c91a8685a86f4099661ba3da017932f6ebbea6de3f0fa7c90"
 
 [[package]]
 name = "strict-num"
@@ -939,9 +1004,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.117"
+version = "2.0.118"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e665b8803e7b1d2a727f4023456bbbbe74da67099c585258af0ad9c5013b9b99"
+checksum = "1b9ae57f904213ebb649ce6895b8a66c66f0203b9319718f69a5612a065b1422"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -959,12 +1024,13 @@ dependencies = [
 
 [[package]]
 name = "system-fonts"
-version = "0.1.0"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f369feb844d5e08bb4e938c3f88ff359261bc94c7553ddb34e174447120b64d6"
+checksum = "46ba78ea149d4bb0626dacad10aa789eedc83395889890a0e6e7ec69a4577442"
 dependencies = [
  "fontdb",
  "sys-locale",
+ "web-sys",
 ]
 
 [[package]]
@@ -1039,9 +1105,9 @@ dependencies = [
 
 [[package]]
 name = "typenum"
-version = "1.20.0"
+version = "1.20.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "40ce102ab67701b8526c123c1bab5cbe42d7040ccfd0f64af1a385808d2f43de"
+checksum = "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20"
 
 [[package]]
 name = "unicode-ident"
@@ -1082,6 +1148,61 @@ checksum = "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b"
 dependencies = [
  "same-file",
  "winapi-util",
+]
+
+[[package]]
+name = "wasm-bindgen"
+version = "0.2.126"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4b067c0c11094aef6b7a801c1e34a26affafdf3d051dba08456b868789aaf9a4"
+dependencies = [
+ "cfg-if",
+ "once_cell",
+ "rustversion",
+ "wasm-bindgen-macro",
+ "wasm-bindgen-shared",
+]
+
+[[package]]
+name = "wasm-bindgen-macro"
+version = "0.2.126"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "167ce5e579f6bcf889c4f7175a8a5a585de84e8ff93976ce393efa5f2837aab1"
+dependencies = [
+ "quote",
+ "wasm-bindgen-macro-support",
+]
+
+[[package]]
+name = "wasm-bindgen-macro-support"
+version = "0.2.126"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f3997c7839262f4ef12cf90b818d6340c18e80f263f1a94bf157d0ec4420380e"
+dependencies = [
+ "bumpalo",
+ "proc-macro2",
+ "quote",
+ "syn",
+ "wasm-bindgen-shared",
+]
+
+[[package]]
+name = "wasm-bindgen-shared"
+version = "0.2.126"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dc1b4cb0cc549fcf58d7dfc081778139b3d283a081644e833e84682ad71cea24"
+dependencies = [
+ "unicode-ident",
+]
+
+[[package]]
+name = "web-sys"
+version = "0.3.103"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8622dcb61c0bcc9fffa6938bed81210af2da9a7e4a1a834b2e37a59b6dfb6141"
+dependencies = [
+ "js-sys",
+ "wasm-bindgen",
 ]
 
 [[package]]
