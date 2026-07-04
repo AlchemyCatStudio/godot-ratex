@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.2.2] — 2026-07-04
+
+### Added
+- **BBCode table support** (`[table=N][cell]...[/cell]...[/table]`) using `GridContainer` with `PanelContainer` cell wrappers and `StyleBoxFlat` borders. Empty trailing cells auto-padded. Border color configurable via `table_border_color` export.
+- **BBCode ordered/unordered lists** (`[ul bullet=X]...[/ul]`, `[ol type=1|a|A|i|I]...[/ol]`). Compound numbering for nested ordered lists (e.g., `2.1.`). Sublists merge into parent item instead of creating empty items.
+- **BBCode indent blocks** (`[indent]...[/indent]`) with recursive block parsing via `MarginContainer`.
+- **Inline image support** (`[img=WxH]path[/img]`) with scaling in px, %, and em units.
+- **Line break support** (`[br]`).
+- **Paragraph alignment** (`[left]`, `[center]`, `[right]`, `[fill]`) via `HFlowContainer.alignment` using lazy line creation and an alignment stack.
+
+### Changed
+- **Rewrote `godot_ratex_label.gd`** with a two-phase parsing architecture: block-level structural parser (`_parse_block_structure`) separates tables, lists, and indents from inline content, then inline tokenizer builds `HFlowContainer` paragraphs. LaTeX math rendering works inside all block types.
+- Cell borders use `PanelContainer` + `StyleBoxFlat` padding instead of `GridContainer` `h_separation`/`v_separation` overrides.
+- `generate()` now delegates to block builders instead of directly building UI from a flat token array.
+
+### Fixed
+- Nested list items no longer split into separate top-level items.
+- Ordered lists produce correct compound numbering (`1.1.`, `1.a.` etc.) via prefix threading through `_build_block`.
+- Empty table cells no longer break `GridContainer` row alignment.
+
 ## [1.2.1] — 2026-06-25
 
 ### Changed
@@ -56,6 +76,10 @@
 - Static library support for iOS
 - Simple `render_latex(latex_string)` GDScript API
 
+[1.1.1]: https://github.com/mikhaelmartin/godot-ratex/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/mikhaelmartin/godot-ratex/compare/v1.0.0...v1.1.0
+[1.2.2]: https://github.com/mikhaelmartin/godot-ratex/compare/v1.2.1...v1.2.2
+[1.2.1]: https://github.com/mikhaelmartin/godot-ratex/compare/v1.1.1...v1.2.1
 [1.1.1]: https://github.com/mikhaelmartin/godot-ratex/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/mikhaelmartin/godot-ratex/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/mikhaelmartin/godot-ratex/releases/tag/v1.0.0
